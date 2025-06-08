@@ -6,3 +6,4 @@ aiofiles
 pydantic
 python-dotenv
 openai
+python-dateutil

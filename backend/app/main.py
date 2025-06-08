@@ -14,5 +14,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-frontend_path = Path(__file__).resolve().parent.parent / "frontend"
-app.mount("/",StaticFiles(directory=frontend_path,html=True),name="static")
+
+frontend_path = Path(__file__).resolve().parent.parent / "frontend/postmark-dashboard/dist"
+
+if frontend_path.exists() and any(frontend_path.iterdir()):
+    app.mount("/", StaticFiles(directory=frontend_path, html=True), name="static")
+else:
+    print(f"⚠️ Static directory not found or empty at: {frontend_path}. Skipping mount.")

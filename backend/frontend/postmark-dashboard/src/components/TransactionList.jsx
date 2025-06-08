@@ -6,7 +6,7 @@ export default function TransactionList({ endpoint }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:8000${endpoint}`)
+    fetch(`https://postmarkchallenge.onrender.com${endpoint}`)
       .then((res) => res.json())
       .then((json) => {
         setData(json);

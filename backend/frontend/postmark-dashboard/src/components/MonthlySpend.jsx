@@ -6,7 +6,7 @@ export default function MonthlySpend() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8000/monthly-spend")
+    fetch("https://postmarkchallenge.onrender.com/monthly-spend")
       .then((res) => res.json())
       .then((json) => {
         setSpend(json);

@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/monthly-spend-history')
+    fetch('https://postmarkchallenge.onrender.com/monthly-spend-history')
       .then(res => res.json())
       .then(data => setHistory(data));
   }, []);

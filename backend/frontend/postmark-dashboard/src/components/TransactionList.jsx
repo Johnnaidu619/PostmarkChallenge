@@ -4,9 +4,10 @@ import TransactionCard from "./TransactionCard";
 export default function TransactionList({ endpoint }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const url=import.meta.env.VITE_SITE_URL;
 
   useEffect(() => {
-    fetch(`https://postmarkchallenge.onrender.com${endpoint}`)
+    fetch(`${url}${endpoint}`)
       .then((res) => res.json())
       .then((json) => {
         setData(json);

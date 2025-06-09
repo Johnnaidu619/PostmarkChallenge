@@ -1,33 +1,54 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f9f9f9;
+  background:#dbe3ff;
+  color: black;
 }
 
 .container {
-  max-width: 960px;
-  margin: 2rem auto;
+  width: 1000px;
   padding: 1rem;
-  background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  /* background: white; */
+
 }
+
 
 h1 {
   text-align: center;
 }
 
+.graph-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Optional: to wrap on smaller screens */
+}
+
 .section {
+  flex: 1;
+  min-width: 300px;
   margin-top: 2rem;
 }
+
 
 .card {
   border: 1px solid #ddd;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 6px;
-  background: #fafafa;
+  background: linear-gradient(135deg, #e1e6f0, #f4f7fb);
+  width: 20%;
+  color: black;
 }
+.card-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
 
 .success {
   color: green;
@@ -39,4 +60,10 @@ h1 {
 
 .error {
   color: red;
+}
+
+.graph{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }

@@ -19,7 +19,7 @@ const PieChart = ({ spent, limit }) => {
   return (
     <div style={{ width: '300px', margin: 'auto' }}>
       <h3 style={{ textAlign: 'center' }}>Monthly Spending</h3>
-      <Pie data={data} />
+      <Pie data={data}/>
     </div>
   );
 };

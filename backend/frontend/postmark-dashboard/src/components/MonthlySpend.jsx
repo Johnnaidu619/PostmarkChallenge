@@ -4,9 +4,9 @@ import PieChart from '../components/PieChart'
 export default function MonthlySpend() {
   const [spend, setSpend] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const url=import.meta.env.VITE_SITE_URL;
   useEffect(() => {
-    fetch("https://postmarkchallenge.onrender.com/monthly-spend")
+    fetch(`${url}/monthly-spend`)
       .then((res) => res.json())
       .then((json) => {
         setSpend(json);

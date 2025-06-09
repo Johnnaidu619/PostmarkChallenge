@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
   const [history, setHistory] = useState([]);
+  const url=import.meta.env.VITE_SITE_URL;
 
   useEffect(() => {
-    fetch('https://postmarkchallenge.onrender.com/monthly-spend-history')
+    fetch(`${url}/monthly-spend-history`)
       .then(res => res.json())
       .then(data => setHistory(data));
   }, []);
@@ -18,6 +19,19 @@ export default function Dashboard() {
         <TransactionList endpoint="/transactions" />
       </div> */}
 
+<div className="graph-wrapper">
+  <div className="section">
+    <h2>💸 Monthly Spend</h2>
+    <MonthlySpend />
+  </div>
+
+  <div className="section">
+    <h2>History</h2>
+    <LineChart data={history} />
+  </div>
+</div>
+
+
       <div className="section">
         <h2>🏦 Bank Transactions</h2>
         <TransactionList endpoint="/transactions/banks" />
@@ -27,16 +41,6 @@ export default function Dashboard() {
         <h2>🔐 High Confidence</h2>
         <TransactionList endpoint="/transactions/high-confidence" />
       </div> */}
-
-      <div className="section">
-        <h2>💸 Monthly Spend</h2>
-        <MonthlySpend />
-      </div>
-
-      <div>
-        <h2>History</h2>
-        <LineChart data={history}/>
-      </div>
     </div>
   );
 }

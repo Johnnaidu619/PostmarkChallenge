@@ -22,9 +22,11 @@ export default function TransactionList({ endpoint }) {
 
   return (
     <>
+    <div className="card-grid">
       {data.map((tx) => (
         <TransactionCard key={tx._id} tx={tx} />
       ))}
+      </div>
     </>
   );
 }

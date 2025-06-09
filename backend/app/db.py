@@ -11,4 +11,3 @@ db = client[MONGO_DB_NAME]
 
 def get_transaction_collection() -> Collection:
     return db["transactions"]
-
